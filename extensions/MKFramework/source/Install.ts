@@ -21,7 +21,7 @@ import http from "isomorphic-git/http/node";
 
 export default async function install(versionStr_?: string): Promise<void> {
 	/** 用户名 */
-	const owner = "muzzik";
+	const owner = "Nottheyouth";
 	/** 仓库路径 */
 	const repo = "MKFramework";
 	/** 临时路径 */
@@ -31,7 +31,7 @@ export default async function install(versionStr_?: string): Promise<void> {
 	/** 插件项目路径 */
 	const pluginProjectPath = pluginPath.slice(pluginPath.indexOf("/extensions/")).slice(1);
 	/** 远程路径 */
-	const remoteUrl = `https://gitee.com/${owner}/${repo}.git`;
+	const remoteUrl = `https://github.com/${owner}/${repo}.git`;
 	/** 下载路径 */
 	const downloadPath = path.join(tempPath, "MKFramework");
 	/** 框架代码路径 */
@@ -69,7 +69,7 @@ export default async function install(versionStr_?: string): Promise<void> {
 		})
 		.then(async () => {
 			console.log(Editor.I18n.t("mk-framework.获取版本"));
-			const tagsUrl = `https://gitee.com/${owner}/${repo}/tags`;
+			const tagsUrl = `https://github.com/${owner}/${repo}/tags`;
 			const html = (await axios.get(tagsUrl)).data as string;
 			const tags = html.match(/(?<=(data-ref="))([^"]*)(?=")/g) as string[];
 
